@@ -1,8 +1,24 @@
 
 
+<script>
+	import { Router, Link, Route } from "svelte-routing";
+	import Login from './Login.svelte'
+	import Register from './Register.svelte'
+	import Home from './Home.svelte'
 
+export let url = "";
+</script>
 
-<main>
+  
+  <Router url="{url}">
+	<nav>
+	  <Link to="/">Home</Link>
+	  <Link to="login">Login</Link>
+	</nav>
+	<div>
+	  <Route path="login" component="{Login}" />
+	  <Route path="register" component="{Register}" />
+	  <Route path="/"><Home /></Route>
+	</div>
+  </Router>
 
-	<h1 class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">fabricio</h1>
-</main>
