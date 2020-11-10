@@ -1,6 +1,9 @@
 
 <script>
-    import { Router, links, Link } from "svelte-routing";
+    import { Router, links } from "svelte-routing";
+    import { navigate } from "svelte-routing";
+    import TestandoTail from './TestandoTail.svelte'
+
     import Register from './Register.svelte'
     import {user} from './auth.js';
     import Authguard from './Authguard.svelte';
@@ -26,7 +29,7 @@
         else{
           alert("Acesso liberado: " + username)
           console.log('solicitacao aceita: status code ' + response.status);
-          return 
+          navigate("/tail", { replace: true });
         }
       })
     }
