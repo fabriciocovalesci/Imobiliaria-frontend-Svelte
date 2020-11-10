@@ -23,6 +23,9 @@
     "tailwindcss": "^1.9.6"
   },
   "dependencies": {
+    "express": "^4.17.1",
+    "ky": "^0.24.0",
+    "sapper": "^0.28.10",
     "sirv-cli": "^1.0.0",
     "svelte-routing": "^1.4.2"
   }
