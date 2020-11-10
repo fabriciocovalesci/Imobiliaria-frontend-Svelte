@@ -16,22 +16,22 @@
     <a href="#">Não tem cadastro?</a>
 </div> -->
 <!-- component -->
-<div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+<div class="bg-white shadow-2xl rounded-lg mx-auto lg:h-full lg:w-1/2 px-8 pt-6 pb-8 mb-4 flex flex-col">
     <div class="mb-4">
       <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
-        Username
+        Usuário
       </label>
-      <input class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Username">
+      <input class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Usuário">
     </div>
     <div class="mb-6">
       <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
-        Password
+        Senha
       </label>
       <input class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="******************">
-      <p class="text-red text-xs italic">Please choose a password.</p>
+      <p class="text-red text-xs italic">Informe sua senha.</p>
     </div>
     <div class="flex items-center justify-between">
-      <button class="bg-blue-400 hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" type="button">
+      <button class="bg-blue-300 hover:bg-blue-600 text-white font-bold hover:text-black py-2 px-4 rounded-md" type="button">
         Entrar
       </button>
       
