@@ -13,11 +13,11 @@
 
   
   <Router url="{url}">
-	<nav>
+	<!-- <nav>
 	  <Link to="/">Home</Link>
 	  <Link to="/tail">Tailwind</Link>
 	  <Link to="login">Login</Link>
-	</nav>
+	</nav> -->
 	<div>
 	  <Route path="login" component="{Login}" />
 	  <Route path="register" component="{Register}" />

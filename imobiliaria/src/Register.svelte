@@ -1,5 +1,6 @@
 <script>
   let username, email, password;
+  import Nav from './Nav.svelte'
 
   //curl -d '{"username":"carlos", "email":"carlos@bol.com", "password":"carlos1"}' -H "Content-Type: application/json" -X POST https://apimobiliaria.herokuapp.com/api/v1/register/
 
@@ -29,11 +30,8 @@
 <!-- {#await authPromise}Loding...
   
 {:then _}  -->
-<main class="">
-
-
-
-
+<Nav/>
+<main class="top-10 p-10 m-10 ">
   <div
     class="bg-white shadow-2xl rounded-lg px-8 mx-auto lg:w-1/2 pt-6 pb-8 mb-4 flex flex-col">
     <div class="mb-4">

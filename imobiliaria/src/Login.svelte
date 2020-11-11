@@ -40,38 +40,42 @@
 
   </script>
 
-<main class='container'>
-<Nav/>
-  <Authguard>
-  <div  slot="authed">
-		<Router path="/login/*" redirect="/"/>
-	  <Router path="/home"><h1>It is User's profile page</h1></Router>
-  </div>
-</Authguard>
-    
-<div class="bg-white shadow-2xl rounded-lg mx-auto lg:h-full lg:w-1/2 px-8 pt-6 pb-8 mb-4 flex flex-col">
-    <div class="mb-4">
-      <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
-        Usuário
-      </label>
-      <input bind:value={username} class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Usuário">
-    </div>
-    <div class="mb-6">
-      <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
-        Senha
-      </label>
-      <input bind:value={password} class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="******************">
-      <p class="text-red text-xs italic">Informe sua senha.</p>
-    </div>
-    <div class="flex items-center justify-between">
-      <button on:click={()=>{$user=true&&login()}} class="bg-blue-300 hover:bg-blue-600 text-white font-bold hover:text-black py-2 px-4 rounded-md" type="button">
-        Entrar
-      </button>
-      
-      <Router>
-        <a href="/register" class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-darker" use:links Register>Crie uma conta</a>
-      </Router>
 
+<Nav/>
+<main class=''>
+  <div class='container top-10 m-10 p-10'>
+  <!-- <div class='container top-10 m-10 p-10 '>
+    <Authguard>
+    <div  slot="authed">
+      <Router path="/login/*" redirect="/"/>
+      <Router path="/home"><h1>It is User's profile page</h1></Router>
     </div>
+  </Authguard> -->
+    
+  <div class="bg-white shadow-3xl rounded-lg mx-auto lg:h-full lg:w-1/2 px-8 pt-6 pb-8 mb-4 flex flex-col">
+      <div class="mb-4">
+        <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
+          Usuário
+        </label>
+        <input bind:value={username} class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Usuário">
+      </div>
+      <div class="mb-6">
+        <label class="block text-grey-darker text-sm font-bold mb-2" for="password">
+          Senha
+        </label>
+        <input bind:value={password} class="shadow appearance-none border border-gray-900 rounded w-full py-2 px-3 text-grey-darker mb-3" id="password" type="password" placeholder="******************">
+        <p class="text-red text-xs italic">Informe sua senha.</p>
+      </div>
+      <div class="flex items-center justify-between">
+        <button on:click={()=>{$user=true&&login()}} class="bg-blue-300 hover:bg-blue-600 text-white font-bold hover:text-black py-2 px-4 rounded-md" type="button">
+          Entrar
+        </button>
+        
+        <Router>
+          <a href="/register" class="inline-block align-baseline font-bold text-sm text-blue hover:text-blue-900 hover:underline" use:links Register>Crie uma conta</a>
+        </Router>
+
+      </div>
+  </div>
 </div>
 </main>
