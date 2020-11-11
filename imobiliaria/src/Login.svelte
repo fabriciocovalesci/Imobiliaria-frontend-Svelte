@@ -3,6 +3,8 @@
     import { Router, links } from "svelte-routing";
     import { navigate } from "svelte-routing";
     import TestandoTail from './TestandoTail.svelte'
+    import Nav from './Nav.svelte'
+
 
     import Register from './Register.svelte'
     import {user} from './auth.js';
@@ -38,8 +40,8 @@
 
   </script>
 
-<main>
-
+<main class='container'>
+<Nav/>
   <Authguard>
   <div  slot="authed">
 		<Router path="/login/*" redirect="/"/>

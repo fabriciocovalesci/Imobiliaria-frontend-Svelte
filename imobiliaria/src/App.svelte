@@ -6,6 +6,7 @@
 	import Register from './Register.svelte'
 	import Home from './Home.svelte'
 	import TestandoTail from './TestandoTail.svelte'
+	import Imoveis from './Imoveis.svelte'
 
 	export let url = "";
 </script>
@@ -20,6 +21,7 @@
 	<div>
 	  <Route path="login" component="{Login}" />
 	  <Route path="register" component="{Register}" />
+	  <Route path="imoveis" component="{Imoveis}" />
 	  <Route path="tail" component="{TestandoTail}" />
 	  <Route path="/"><Home /></Route>
 	</div>
