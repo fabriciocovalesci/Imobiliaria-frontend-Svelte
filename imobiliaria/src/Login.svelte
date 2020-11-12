@@ -4,18 +4,15 @@
     import { navigate } from "svelte-routing";
     import TestandoTail from './TestandoTail.svelte'
     import Nav from './Nav.svelte'
-    import Imoveis from './Imoveis.svelte'
+    import Perfil from './Perfil.svelte'
 
-
-    import Register from './Register.svelte'
     import {user} from './auth.js';
     import Authguard from './Authguard.svelte';
 
-
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/login/'
     let username, password;
-
-   function login(){
+   
+    function login(){
       fetch(URL,{
         method: 'POST',
         headers: {
@@ -24,18 +21,19 @@
         },
         body: JSON.stringify({"username" : username, "password" : password})
       })
-      .then((response) =>{
-        if(response.status != 200){
-          console.log("ERROR: sem acesso ao sistema " + response.status );
-          alert("Usuarico com senha/user incorreto ou sem cadastro")
-        }
-        else{
-          alert("Acesso liberado: " + username)
-          console.log('solicitacao aceita: status code ' + response.status);
-          navigate("/imoveis", { replace: true });
-        }
+      // .then((response) =>{
+      //   if(response.status != 200 || response.body == null){
+      //     console.log("ERROR: sem acesso ao sistema " + response.status );
+      //     alert("Usuarico com senha/user incorreto ou sem cadastro")
+      //   }
+      // })
+      .then(response => response.json())
+      .then(data => {
+      $user = data.token
+      navigate("/perfil", { replace: true })
       })
     }
+
 
   </script>
 

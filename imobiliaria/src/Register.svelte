@@ -1,9 +1,11 @@
 <script>
   let username, email, password;
   import Nav from './Nav.svelte'
+  import {user} from './auth.js';
+  import Perfil from './Perfil.svelte'
+  import { navigate } from "svelte-routing";
 
   //curl -d '{"username":"carlos", "email":"carlos@bol.com", "password":"carlos1"}' -H "Content-Type: application/json" -X POST https://apimobiliaria.herokuapp.com/api/v1/register/
-
 
   let URL = "https://apimobiliaria.herokuapp.com/api/v1/register/";
 
@@ -11,18 +13,22 @@
       fetch(URL,{
         method: 'POST',
         headers: {
+          'Accept': "application/json",
         "Content-Type": "application/json"
         },
         body: JSON.stringify({"username": username, "email": email, "password" : password})
       })
-      .then((response) =>{
-        if(response.status != 200){
-          console.log("ERROR: sem acesso ao sistema " + response.status  + ' body: ' + response.body);
-        }else{
-          console.log('solicitacao aceita: status code ' + response.status);
-          alert("Acesso liberado" + username)
-        }
+      .then(response => response.json())
+      .then(data => {
+      $user = data.token
+      navigate("/perfil", { replace: true })
       })
+      
+      // .then((response) =>{
+      //   if(response.status != 200){
+      //     console.log("ERROR: sem acesso ao sistema " + response.status  + ' body: ' + response.body);
+      //   }
+      // })
     }
 
 </script>

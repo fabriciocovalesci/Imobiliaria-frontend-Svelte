@@ -2,7 +2,7 @@
 
 <script>
     import Nav from './Nav.svelte'
-    import ImovelID from './ImovelID.svelte'
+    import Perfil from './Perfil.svelte'
     import { Router, Link, Route, links } from "svelte-routing";
 
 
@@ -37,7 +37,7 @@
         <Router>
             <div class=' p-5 m-5 bg-left'>
             <!-- <a href="/imovelID" class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" use:links ImovelID>Home</a> -->
-            <a href="/imovelID"    use:links ImovelID><button class='bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md' type='button'>Confira</button></a>
+            <a href="/perfil"    use:links Perfil><button class='bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md' type='button'>Confira</button></a>
         </div>
         </Router>
     </div>
