@@ -6,7 +6,7 @@
     import Nav from './Nav.svelte'
     import Perfil from './Perfil.svelte'
 
-    import {user} from './auth.js';
+    import {user, userId} from './auth.js';
     import Authguard from './Authguard.svelte';
 
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/login/'
@@ -30,6 +30,7 @@
       .then(response => response.json())
       .then(data => {
       $user = data.token
+      $userId = data.id
       navigate("/perfil", { replace: true })
       })
     }

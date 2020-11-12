@@ -1,8 +1,8 @@
 <script>
   let username, email, password;
   import Nav from './Nav.svelte'
-  import {user} from './auth.js';
-  import Perfil from './Perfil.svelte'
+  import {user, userId} from './auth.js';
+  import Login from './Login.svelte'
   import { navigate } from "svelte-routing";
 
   //curl -d '{"username":"carlos", "email":"carlos@bol.com", "password":"carlos1"}' -H "Content-Type: application/json" -X POST https://apimobiliaria.herokuapp.com/api/v1/register/
@@ -21,7 +21,7 @@
       .then(response => response.json())
       .then(data => {
       $user = data.token
-      navigate("/perfil", { replace: true })
+      navigate("/login", { replace: true })
       })
       
       // .then((response) =>{
@@ -89,6 +89,8 @@
       {username}
       {email}
       {password}
+      {$user}
+      {$userId}
       </pre>
   </div>
 </main>
