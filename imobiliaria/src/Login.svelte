@@ -4,6 +4,7 @@
     import { navigate } from "svelte-routing";
     import TestandoTail from './TestandoTail.svelte'
     import Nav from './Nav.svelte'
+    import Imoveis from './Imoveis.svelte'
 
 
     import Register from './Register.svelte'
@@ -31,12 +32,10 @@
         else{
           alert("Acesso liberado: " + username)
           console.log('solicitacao aceita: status code ' + response.status);
-          navigate("/tail", { replace: true });
+          navigate("/imoveis", { replace: true });
         }
       })
     }
-
-  
 
   </script>
 
