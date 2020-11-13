@@ -1,6 +1,6 @@
 
 <script>
-    import { Router, links } from "svelte-routing";
+    import { Router, Link, links } from "svelte-routing";
     import { navigate } from "svelte-routing";
     import TestandoTail from './TestandoTail.svelte'
     import Nav from './Nav.svelte'
@@ -123,7 +123,7 @@
     </div>
   </Authguard> -->
     
-  <div class="bg-white shadow-3xl rounded-lg mx-auto lg:h-full px-8 pt-6 pb-8 mb-4">
+  <div class="bg-white border border-solid border-gray-800 border-3 shadow-3xl rounded-lg mx-auto lg:h-full px-8 pt-6 pb-8 mb-4">
     <h2 class='text-center text-2xl font-mono font-bold text-black'>Perfil</h2>
     <div class='grid grid-cols-2'>
         <div class="mb-4 m-1 p-1">
@@ -166,7 +166,7 @@
     </div>
 </div>
 
-    <div class="bg-white shadow-3xl rounded-lg mx-auto lg:h-full px-8 pt-6 pb-8 mb-4">
+    <div class="bg-white border border-solid border-gray-800 border-3 shadow-3xl rounded-lg mx-auto lg:h-full px-8 pt-6 pb-8 mb-4">
         <h2 class='text-center text-2xl font-mono font-bold text-black'>Endereço</h2>
     <div class='grid grid-cols-2'>
         <div class="mb-6 m-1 p-1">

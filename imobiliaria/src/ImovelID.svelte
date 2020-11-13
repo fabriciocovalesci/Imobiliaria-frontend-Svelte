@@ -5,7 +5,6 @@
     import Perfil from './Perfil.svelte'
     import { Router, Link, Route, links } from "svelte-routing";
 
-
 </script>
 
 

@@ -1,6 +1,6 @@
 
 <script>
-    import { Router, links } from "svelte-routing";
+    import { Router, Link, links } from "svelte-routing";
     import { navigate } from "svelte-routing";
     import TestandoTail from './TestandoTail.svelte'
     import Nav from './Nav.svelte'
@@ -50,7 +50,7 @@
     </div>
   </Authguard> -->
     
-  <div class="bg-white shadow-3xl rounded-lg mx-auto lg:h-full lg:w-1/2 px-8 pt-6 pb-8 mb-4 flex flex-col">
+  <div class="border bg-indigo-100 border-solid border-gray-800 border-3 shadow-3xl rounded-lg mx-auto lg:h-full lg:w-1/2 px-8 pt-6 pb-8 mb-4 flex flex-col">
       <div class="mb-4">
         <label class="block text-grey-darker text-sm font-bold mb-2" for="username">
           Usuário

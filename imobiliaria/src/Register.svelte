@@ -39,7 +39,7 @@
 <Nav/>
 <main class="top-10 p-10 m-10 ">
   <div
-    class="bg-white shadow-2xl rounded-lg px-8 mx-auto lg:w-1/2 pt-6 pb-8 mb-4 flex flex-col">
+    class="bg-white shadow-2xl border-solid border-gray-800 border-3 rounded-lg px-8 mx-auto lg:w-1/2 pt-6 pb-8 mb-4 flex flex-col">
     <div class="mb-4">
       <label
         class="block text-grey-darker text-sm font-bold mb-2"
