@@ -11,6 +11,7 @@
 
 
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/profile/'
+    let URLOCAL = 'http://127.0.0.1:8000/api/v1/register/'
     let CEP = 'https://cep.awesomeapi.com.br/json/'
     let CORS = 'https://cors-anywhere.herokuapp.com/'
 
@@ -87,7 +88,8 @@
 
 
    function perfil(){
-      fetch(`${CORS}${URL}`,{
+    //   fetch(`${CORS}${URLO}`,{
+        fetch(`${URLOCAL}`,{
         method: 'POST',
         headers: {
             'Accept': "application/json",

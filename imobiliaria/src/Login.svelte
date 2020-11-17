@@ -10,10 +10,11 @@
     import Authguard from './Authguard.svelte';
 
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/login/'
+    let URLOCAL = 'http://127.0.0.1:8000/api/v1/login/'
     let username, password;
    
     function login(){
-      fetch(URL,{
+      fetch(URLOCAL,{
         method: 'POST',
         headers: {
           'Accept': "application/json",

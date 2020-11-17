@@ -5,7 +5,7 @@
 
     let URLimoveis = 'https://apimobiliaria.herokuapp.com/api/v1/immobile/'
 
-   export let description, title, photo;
+   export let description, title, photo, id;
 
 </script>
 

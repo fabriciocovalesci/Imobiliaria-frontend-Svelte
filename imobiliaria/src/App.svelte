@@ -10,6 +10,8 @@
 	import ImovelID from './ImovelID.svelte'
 	import Perfil from './Perfil.svelte'
 	import Cards from './Cards.svelte'
+	import Compra from './Componets/Compra.svelte'
+	import Sucesso from './Componets/Sucesso.svelte'
 
 	export let url = "";
 </script>
@@ -29,6 +31,8 @@
 	  <Route path="imovelID" component="{ImovelID}" />
 	  <Route path="perfil" component="{Perfil}" />
 	  <Route path="perfil" component="{Cards}" />
+	  <Route path="compra" component="{Compra}" />
+	  <Route path="finalzado" component="{Sucesso}" />
 	  <Route path="/"><Home /></Route>
 	</div>
   </Router>
