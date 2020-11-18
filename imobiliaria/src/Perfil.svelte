@@ -7,7 +7,7 @@
     import Imoveis from './Imoveis.svelte'
     import Login from './Login.svelte'
     import { validate } from 'gerador-validador-cpf'
-    import {user, userId} from './auth.js';
+    import {user } from './auth.js';
 
 
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/profile/'
@@ -90,7 +90,7 @@
    function perfil(){
     //   fetch(`${CORS}${URLO}`,{
         fetch(`${URLOCAL}`,{
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Accept': "application/json",
             "Content-Type": "application/json",
@@ -236,7 +236,6 @@
 
 <pre>
 {$user}
-{$userId}
 {cpf} 
 {account}
  {telefone} 

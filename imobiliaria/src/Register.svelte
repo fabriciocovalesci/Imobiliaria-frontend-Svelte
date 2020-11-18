@@ -8,9 +8,11 @@
   //curl -d '{"username":"carlos", "email":"carlos@bol.com", "password":"carlos1"}' -H "Content-Type: application/json" -X POST https://apimobiliaria.herokuapp.com/api/v1/register/
 
   let URL = "https://apimobiliaria.herokuapp.com/api/v1/register/";
+  let URLOCAL = "http://127.0.0.1:8000/api/v1/register/";
+
 
   function register(){
-      fetch(URL,{
+      fetch(URLOCAL,{
         method: 'POST',
         headers: {
           'Accept': "application/json",
