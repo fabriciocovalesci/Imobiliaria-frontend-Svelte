@@ -10,53 +10,63 @@
   import { user } from "./auth.js";
   import App from "./App.svelte";
   import Authguard from "./Authguard.svelte";
-  import {imoveis} from  './imoveis'
+  import {imoveis, indice} from  './imoveis'
+  import  ImmovelID  from './ImovelID.svelte'
+
   
     let URLimoveis = "https://apimobiliaria.herokuapp.com/api/v1/immobile/";
     let URLOCAL = "http://127.0.0.1:8000/api/v1/immobile/";
-    let descricao, titulo, foto;
+  
+  // function getImovell() {
+  //   fetch(`${URLOCAL}`, {
+  //     method: "GET",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json"
+  //       //Authorization: "Token " + $user,
+  //     },
+  //   })
+  //     .then((response) => response.json())
+  //     .then(({ results }) => {
+  //       dataIm = results;
+  //       console.log(dataIm);
+  //     });
+  // }
 
+  // async function fetchData() {
+  //   const res = await fetch(`${URLOCAL}`, {
+  //     method: "GET",
+  //     headers: {
+  //       Accept: "application/json",
+  //       "Content-Type": "application/json",
+  //     //  Authorization: "Token " + $user,
+  //     },
+  //   });
+  //   const data = await res.json();
+  //   $imoveis = data;
+  //   dataIm = data;
+  //   //console.log($imoveis);
+  //   if (res.ok) {
+  //     return data;
+  //   } else {
+  //     throw new Error(data);
+  //   }
+  // }
 
-  function getImovell() {
-    fetch(`${URLOCAL}`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: "Token " + $user,
-      },
-    })
-      .then((response) => response.json())
-      .then(({ results }) => {
-        dataIm = results;
-      });
-  }
+onMount( async () => {
+  let res = await fetch(URLOCAL);
+  res = await res.json()
+  $imoveis = res
+  console.log($imoveis);
+})
 
-  async function fetchData() {
-    const res = await fetch(`${URLOCAL}`, {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: "Token " + $user,
-      },
-    });
-    const data = await res.json();
-    $imoveis = data;
-    console.log($imoveis);
-    if (res.ok) {
-      return data;
-    } else {
-      throw new Error(data);
-    }
-  }
 </script>
 
 <Nav />
 <main class="top-10 m-10 p-10">
   <Carousel />
   <div class="flex flex-wrap m-5 mx-auto">
- {#await fetchData()}
+ <!-- {#await fetchData()}
       <p>loading</p>
     {:then items}
       {#each items as item}
@@ -66,13 +76,19 @@
             description="{item.description},"
             title="{item.title},"
             photo={item.photo}
-            id="{item.id}"/>
+            id="{$indice=true&&(item.id)}"/>
         </div>
       {/each}
     {:catch error}
       <p style="color: red">{error.message}</p>
-    {/await}
+    {/await} -->
 
-
+    {#each $imoveis as imovel}
+    <div
+    class="w-full overflow-hidden p-2 m-2 p-2 m-2 mx-auto xl:my-2 xl:px-2 xl:w-1/3">
+    <Cards 
+    imovelData={imovel}/>
+  </div>
+    {/each}
   </div>
 </main>

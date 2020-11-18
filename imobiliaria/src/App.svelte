@@ -28,7 +28,7 @@
 	  <Route path="register" component="{Register}" />
 	  <Route path="imoveis" component="{Imoveis}" />
 	  <Route path="tail" component="{TestandoTail}" />
-	  <Route path="imovelID" component="{ImovelID}" />
+	  <Route path="imovelID/:id" component="{ImovelID}" />
 	  <Route path="perfil" component="{Perfil}" />
 	  <Route path="perfil" component="{Cards}" />
 	  <Route path="compra" component="{Compra}" />

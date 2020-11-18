@@ -1,0 +1,89 @@
+[
+    {
+       "id":1,
+       "title":"Apartamento central",
+       "description":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+       "condominium":"150.00",
+       "typeIm":{
+          "id":1,
+          "typeIm":"apartamento"
+       },
+       "photo":"http://127.0.0.1:8000/media/photoImmobile/varanda-de-apartamento-1024x614.jpg",
+       "address":{
+          "id":2,
+          "state":{
+             "id":2,
+             "state":"RS"
+          },
+          "city":{
+             "id":2,
+             "city":"Erechim"
+          },
+          "neighborhood":{
+             "id":2,
+             "neighborhood":"Ceramica"
+          },
+          "street":"Joaquim De Moura Faitao",
+          "number":"2333",
+          "cep":"99711030"
+       }
+    },
+    {
+       "id":2,
+       "title":"Apartamento Belo",
+       "description":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+       "condominium":"200.00",
+       "typeIm":{
+          "id":2,
+          "typeIm":"apartamento"
+       },
+       "photo":"http://127.0.0.1:8000/media/photoImmobile/osasco-apartamento.jpg",
+       "address":{
+          "id":3,
+          "state":{
+             "id":3,
+             "state":"RS"
+          },
+          "city":{
+             "id":3,
+             "city":"Erechim"
+          },
+          "neighborhood":{
+             "id":3,
+             "neighborhood":"Bela vista"
+          },
+          "street":"Carlos Angelo Arpini",
+          "number":"22",
+          "cep":"99711030"
+       }
+    },
+    {
+       "id":3,
+       "title":"Apartamento com 2 quartos , 79m²",
+       "description":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+       "condominium":"250.00",
+       "typeIm":{
+          "id":3,
+          "typeIm":"apartamento"
+       },
+       "photo":"http://127.0.0.1:8000/media/photoImmobile/apartamento-decorado-1-1170x780.jpg",
+       "address":{
+          "id":4,
+          "state":{
+             "id":4,
+             "state":"SC"
+          },
+          "city":{
+             "id":4,
+             "city":"Blumenau"
+          },
+          "neighborhood":{
+             "id":4,
+             "neighborhood":"Centro"
+          },
+          "street":"avenida",
+          "number":"34",
+          "cep":"88801040"
+       }
+    }
+ ]
