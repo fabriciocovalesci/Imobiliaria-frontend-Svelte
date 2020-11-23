@@ -9,7 +9,6 @@
   import Carousel from "./Componets/Carousel.svelte";
   import { user } from "./auth.js";
   import App from "./App.svelte";
-  import Authguard from "./Authguard.svelte";
   import {imoveis, indice} from  './imoveis'
   import  ImmovelID  from './ImovelID.svelte'
 

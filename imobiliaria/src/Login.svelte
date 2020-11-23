@@ -7,7 +7,6 @@
     import Perfil from './Perfil.svelte'
 
     import {user, userId} from './auth.js';
-    import Authguard from './Authguard.svelte';
 
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/login/'
     let URLOCAL = 'http://127.0.0.1:8000/api/v1/login/'

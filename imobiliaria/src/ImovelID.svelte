@@ -18,17 +18,25 @@
         //navigate(`/imovelID/${imovelData.id}`, { replace: true })
     }
 
+    let Resp = []   
+
     onMount( async () => {
         let res = await fetch(URLIM);
         res = await res.json()
         $imoveilAlow = res
-        console.log($imoveilAlow);
+        Resp = res
+       // console.log($imoveilAlow);
         })
+
+        let jsonAD = $imoveilAlow.address
+
+    let jsonAddress = JSON.stringify($imoveilAlow.address)
+ 
+        console.log(JSON.stringify(jsonAddress));
+     
 
 </script>
 
-{JSON.stringify($imoveilAlow)}
-{($imoveilAlow.title)}
 <Nav/>
 <main class='top-10 m-10 p-10'>
 <div class='grid grid-flow-col'>
@@ -41,6 +49,7 @@
         <div class='m-3 p-3'>
             <h2 class='font-hairline font-bold text-orange-800 text-center p-2'>{($imoveilAlow.title)}</h2>
             <p class='font-hairline text-black text-justify p-2'>{($imoveilAlow.description)}</p>
+            <p class='font-hairline text-black text-justify p-2'>ETH {($imoveilAlow.amount)}</p>
         </div>
         <div class='flex flex-row'>
 
@@ -48,10 +57,10 @@
         <div  class='ml-6 p-1 '>
             <h3>Endereço</h3>
             <ul class="">
-                <!-- <li>{JSON.stringify($imoveilAlow.address.state.state)}</li> -->
-                <!-- <li>{($imoveilAlow.address.city)}</li> -->
-                <li>{$imoveilAlow.neighborhood}</li>
-                <li>{$imoveilAlow.street}</li>
+                <!-- <li>{JSON.stringify($imoveilAlow.address['id'])}</li>  -->
+                <!-- <li>{jsonResp.address.city.city}</li>
+                <li>{jsonResp.address.neighborhood.neighborhood}</li>
+                <li>{jsonResp.address.street.street}</li> -->
             </ul>
         </div>
         <Router>

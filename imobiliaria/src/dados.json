@@ -87,3 +87,114 @@
        }
     }
  ]
+
+
+
+ {
+    "id":1,
+    "title":"Apartamento central",
+    "description":"It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+    "condominium":"150.00",
+    "typeIm":{
+       "id":1,
+       "typeIm":"apartamento"
+    },
+    "photo":"http://127.0.0.1:8000/media/photoImmobile/varanda-de-apartamento-1024x614.jpg",
+    "address":{
+       "id":2,
+       "state":{
+          "id":2,
+          "state":"RS"
+       },
+       "city":{
+          "id":2,
+          "city":"Erechim"
+       },
+       "neighborhood":{
+          "id":2,
+          "neighborhood":"Ceramica"
+       },
+       "street":"Joaquim De Moura Faitao",
+       "number":"2333",
+       "cep":"99711030"
+    }
+ }
+
+
+
+ ###### Comprar
+
+
+ {
+   "amount": null,
+   "date": null,
+   "client": {
+       "cpf": "",
+       "account": "",
+       "cellphone": "",
+       "address": {
+           "state": {
+               "state": ""
+           },
+           "city": {
+               "city": ""
+           },
+           "neighborhood": {
+               "neighborhood": ""
+           },
+           "street": "",
+           "number": "",
+           "cep": ""
+       },
+       "user": {
+           "username": "",
+           "email": ""
+       }
+   },
+   "salesman": {
+       "cpf": "",
+       "account": "",
+       "cellphone": "",
+       "address": {
+           "state": {
+               "state": ""
+           },
+           "city": {
+               "city": ""
+           },
+           "neighborhood": {
+               "neighborhood": ""
+           },
+           "street": "",
+           "number": "",
+           "cep": ""
+       },
+       "user": {
+           "username": "",
+           "email": ""
+       }
+   },
+   "immobile": {
+       "title": "",
+       "description": "",
+       "condominium": null,
+       "typeIm": {
+           "typeIm": ""
+       },
+       "photo": null,
+       "address": {
+           "state": {
+               "state": ""
+           },
+           "city": {
+               "city": ""
+           },
+           "neighborhood": {
+               "neighborhood": ""
+           },
+           "street": "",
+           "number": "",
+           "cep": ""
+       }
+   }
+}
