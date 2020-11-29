@@ -3,6 +3,7 @@
     import CardClient from './CardClient.svelte'
     import CardSale from './CardSale.svelte'
     import FinalSale from './FinalSale.svelte'
+    import Checkout from './Checkout.svelte'
 
 
     import Nav from '../Nav.svelte'
@@ -94,7 +95,7 @@
 
 
     <Router>
-        <a href="/final" use:links FinalSale><button class='bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md' type='button'>Finalizar compra</button></a>
+        <a href="/checkout" use:links Checkout><button class='bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md' type='button'>Finalizar compra</button></a>
     </Router>
 
 

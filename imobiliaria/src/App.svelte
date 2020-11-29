@@ -12,6 +12,7 @@
 	import Cards from './Cards.svelte'
 	import Compra from './Componets/Compra.svelte'
 	import FinalSale from './Componets/FinalSale.svelte'
+	import Checkout from './Componets/Checkout.svelte'
 
 	export let url = "";
 </script>
@@ -33,6 +34,7 @@
 	  <Route path="perfil" component="{Cards}" />
 	  <Route path="compra" component="{Compra}" />
 	  <Route path="final" component="{FinalSale}" />
+	  <Route path="checkout" component="{Checkout}" />
 	  <Route path="/"><Home /></Route>
 	</div>
   </Router>
