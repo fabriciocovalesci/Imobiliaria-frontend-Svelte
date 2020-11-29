@@ -11,6 +11,7 @@
   import App from "./App.svelte";
   import {imoveis, indice} from  './imoveis'
   import  ImmovelID  from './ImovelID.svelte'
+  import Footer from './Componets/Footer.svelte'
 
   
     let URLimoveis = "https://apimobiliaria.herokuapp.com/api/v1/immobile/";
@@ -62,25 +63,9 @@ onMount( async () => {
 </script>
 
 <Nav />
-<main class="top-10 m-10 p-10">
+<main class="top-5 m-2 p-2 lg:top-10 lg:m-10 lg:p-10">
   <Carousel />
-  <div class="flex flex-wrap m-5 mx-auto">
- <!-- {#await fetchData()}
-      <p>loading</p>
-    {:then items}
-      {#each items as item}
-        <div
-          class="w-full overflow-hidden p-2 m-2 p-2 m-2 mx-auto xl:my-2 xl:px-2 xl:w-1/3">
-          <Cards
-            description="{item.description},"
-            title="{item.title},"
-            photo={item.photo}
-            id="{$indice=true&&(item.id)}"/>
-        </div>
-      {/each}
-    {:catch error}
-      <p style="color: red">{error.message}</p>
-    {/await} -->
+  <div class="grid grid-cols-1 lg:flex lg:flex-wrap  mx-auto">
 
     {#each $imoveis as imovel}
     <div
@@ -91,3 +76,4 @@ onMount( async () => {
     {/each}
   </div>
 </main>
+<Footer/>

@@ -4,6 +4,7 @@
     import CardSale from './CardSale.svelte'
     import FinalSale from './FinalSale.svelte'
     import Checkout from './Checkout.svelte'
+    import Footer from './Footer.svelte'
 
 
     import Nav from '../Nav.svelte'
@@ -100,4 +101,4 @@
 
 
 </main>
-
+<Footer/>

@@ -16,12 +16,13 @@
  
 </script>
 
-    <div class="max-w-sm rounded border border-black border-solid border-2 overflow-hidden shadow-lg">
-        <img class="w-full" src={imovelData.photo} alt="Sunset in the mountains">
+    <div class="container rounded border border-black border-solid border-2 overflow-hidden shadow-lg">
+        <img class="lg:w-screen rounded-md" src={imovelData.photo} alt="Sunset in the mountains">
         <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">{imovelData.title}</div>
-            <p class="text-gray-700 text-base">
+            <div class="font-bold text-xl mb-2 text-center">{imovelData.title}</div>
+            <p class="text-gray-700 text-base lg:container">
                 {imovelData.description}
+            </p>
         </div>
         <div class="px-6 pt-4 pb-2">
            <Router>
@@ -30,3 +31,4 @@
         </div>
         
     </div>
+

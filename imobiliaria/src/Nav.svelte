@@ -25,6 +25,12 @@
 
 				<li class="mr-3">
 					<Router>
+						<a href="/cadastraimoveis" class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" use:links CadastraImoveis>Cadastrar Imóveis</a>
+					  </Router>
+				</li>
+
+				<li class="mr-3">
+					<Router>
 					<a href="/login" class="inline-block text-black font-bold no-underline hover:text-gray-800 hover:text-underline py-2 px-4" use:links Login>Login</a>
 				</Router>
 				</li>

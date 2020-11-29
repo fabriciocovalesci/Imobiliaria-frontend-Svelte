@@ -8,6 +8,7 @@
     import Login from './Login.svelte'
     import { validate } from 'gerador-validador-cpf'
     import {user } from './auth.js';
+    import Footer from './Componets/Footer.svelte'
 
 
     let URL = 'https://apimobiliaria.herokuapp.com/api/v1/profile/'
@@ -233,6 +234,7 @@
 </div>
 </div>
 </main>
+<Footer/>
 
 <pre>
 {$user}

@@ -2,7 +2,7 @@
 <script>
     import Nav from "../Nav.svelte";
     import { Router, Link, Route, links } from "svelte-routing";
-
+    import Footer from './Footer.svelte'
     import Web3 from "../web3.js";
 
     const web3 = new Web3("HTTP://127.0.0.1:7545");
@@ -204,3 +204,4 @@
         Abrir MetaMask
     </button>
 </main>
+<Footer/>
