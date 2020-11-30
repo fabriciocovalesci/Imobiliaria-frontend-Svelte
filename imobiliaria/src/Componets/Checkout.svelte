@@ -15,6 +15,7 @@
         imoveilAlow,
         dataIm,
         dataClient,
+        newAddress,
         dataSale,
     } from "../imoveis.js";
     import { onMount } from "svelte";
@@ -23,7 +24,7 @@
 
     let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
 
-    let URLCLIENT = "http://localhost:8000/api/v1/profile/1";
+    let URLCLIENT = "http://localhost:8000/api/v1/profile/4";
 
     let URLSALEMAN = "http://localhost:8000/api/v1/profile/1";
 
@@ -36,17 +37,19 @@
         // console.log($imoveilAlow);
     });
 
-    onMount(async () => {
-        let resp = await fetch(URLCLIENT);
-        resp = await resp.json();
-        $dataClient = resp;
-        // console.log($imoveilAlow);
-    });
 
     onMount(async () => {
         let response = await fetch(URLSALEMAN);
         response = await response.json();
         $dataSale = response;
+        // console.log($imoveilAlow);
+    });
+
+
+    onMount(async () => {
+        let resp = await fetch(URLCLIENT);
+        resp = await resp.json();
+        $dataClient = resp;
         // console.log($imoveilAlow);
     });
 
@@ -203,18 +206,25 @@
             );
     }
 
-    function Seuendereco(endereco) {
-        if (!endereco) {
-            throw "Error ao capturar endereco " + endereco;
+    let endereco = []
+
+    function trocaAddress(){
+        if(!endereco[0]){
+            return false;
         }
-        return endereco;
+        let end = endereco[0]
+        $newAddress = endereco[0]
+        console.log('meu novo address ' + end);
+        console.log($newAddress[0]);
+        return $newAddress[0];
     }
 
     function ConnectMetaMask() {
         if (window.ethereum !== "undefined") {
             window.ethereum.enable().then((data) => {
-                Seuendereco(data);
-                console.log(data);
+                endereco.push(data)
+                console.log(endereco);
+                trocaAddress()
                 alert("Sucesso na conexão com MetaMask\nSeu endereço " + data);
             });
             return true;
@@ -223,6 +233,7 @@
             return false;
         }
     }
+
 </script>
 
 <Nav />
@@ -260,7 +271,7 @@
                     class="uppercase text-center tracking-wide text-lg text-indigo-800 font-semibold">
                     Cliente
                 </h2>
-                <CardClient DataClient={$dataClient} />
+                <CardClient DataClient={$newAddress[0] ? $newAddress[0] : $dataClient} />
             </div>
         </div>
 

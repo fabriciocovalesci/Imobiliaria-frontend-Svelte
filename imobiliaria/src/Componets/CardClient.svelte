@@ -1,5 +1,6 @@
 <script>
     export let DataClient = {};
+    export let newAddress = {};
 </script>
 
 <div class="grid xl:grid-flow-col lg:grid-flow-col mx-auto  m-2 p-1">
@@ -8,7 +9,7 @@
         <p class="text-justify"></p>
             <p class="mt-2 text-center text-gray-800">
                 Account 
-                {DataClient.account}
+                {newAddress[0] ? newAddress[0] : DataClient.account}
             </p>
     </div>
 </div>

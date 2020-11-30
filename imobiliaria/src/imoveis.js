@@ -12,3 +12,5 @@ export let dataIm = writable([])
 export let dataClient = writable([])
 
 export let dataSale = writable([])
+
+export let newAddress = writable([])
