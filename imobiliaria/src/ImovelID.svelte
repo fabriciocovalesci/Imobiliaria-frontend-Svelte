@@ -36,38 +36,27 @@
 
 <Nav />
 <main class="top-10 m-10 p-10">
-    <div class="w-full lg:max-w-full lg:flex">
-        <div
-            class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"/>
-            <img
-            class="w-full"
-            src={$imoveilAlow.photo}
-            alt=""
-            srcset="" />
-        <div
-            class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-            <div class="mb-8">
-                <div class="fill-current text-gray-500 w-3 h-3 mr-2">
-                   
-                </div>
-                <div class="text-gray-900 font-bold text-center text-xl mb-2">
-                    {$imoveilAlow.title}
-                </div>
-                <p class="text-gray-700 text-base">
-                    {$imoveilAlow.description}
-                </p>
-                <p class="text-black text-base font-bold">ETH {$imoveilAlow.amount}</p>
-            </div>
-            <div class="flex items-center">
-                <Router>
-                    <div class=" p-5 m-5 bg-left">
-                        <a href="/compra" use:links Perfil><button
-                                class="bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md"
-                                type="button">Comprar</button></a>
-                    </div>
-                </Router>
-            </div>
+
+    <div class="max-w-md mx-auto bg-white rounded-xl border border-black border-solid border-2 shadow-md overflow-hidden md:max-w-2xl">
+        <div class="md:flex">
+          <div class="md:flex-shrink-0">
+            <img class="h-56 w-full object-cover md:w-48" src={$imoveilAlow.photo} alt="">
+          </div>
+          <div class="p-8">
+            <div class="uppercase text-center tracking-wide text-sm text-indigo-500 font-semibold">{$imoveilAlow.title}</div>
+            <p class="block mt-1 text-lg text-center leading-tight font-medium text-black">ETH {$imoveilAlow.amount}</p>
+            <p class="mt-2 text-center text-gray-800">{$imoveilAlow.description}</p>
+          </div>
         </div>
-    </div>
+        <div class="flex items-center">
+            <Router>
+                <div class=" p-5 m-5 bg-left">
+                    <a href="/compra" use:links Perfil><button
+                            class="bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md"
+                            type="button">Comprar</button></a>
+                </div>
+            </Router>
+        </div>
+      </div>   
 </main>
 <Footer />

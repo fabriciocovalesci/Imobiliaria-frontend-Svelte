@@ -47,7 +47,8 @@
         method: 'POST',
         headers: {
             'Accept': "application/json",
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            'Accept-Encoding': 'deflate, gzip;q=1.0, *;q=0.5'
             //'Authorization': 'Token ' + $user
         },
         body: JSON.stringify(
@@ -90,6 +91,54 @@
         }
       })
     }
+
+
+    async function CadastraImovel () {
+		const res = await fetch(URLIMOVEL, {
+            method: 'POST',
+            headers: {
+            'Accept': "application/json",
+            "Content-Type": "application/json",
+            'Accept-Encoding': 'deflate, gzip;q=1.0, *;q=0.5'
+            },
+			body: JSON.stringify({
+                'title': title,
+                'description': description,
+                'amount': amount,
+                'condominium': condominium,
+                'typeIm': {
+                    'typeIm': typeIm
+                },
+                'photo': photo,
+                'address': {
+                    'state': {
+                        'state': state
+                    },
+                    'city': {
+                        'city': city
+                    },
+                    'neighborhood': {
+                        'neighborhood': neighborhood
+                    },
+                    'street': street,
+                    'number': number,
+                    'cep': cep
+                }
+			})
+		})
+		
+        .then((response) => {
+        if(response.status != 200){
+          console.log("ERROR: sem acesso ao sistema " + response.status );
+          alert("ERROR: Verifique os dados informados " + response.statusText)
+        }
+        else{
+          alert("Cadastro efetuado com sucesso !!!")
+          console.log('solicitacao aceita: status code ' + response.status);
+          navigate("/imoveis", { replace: true });
+        }
+      })
+	}
       
   
   </script>
@@ -239,7 +288,7 @@
     
     </div>
     <div class="flex items-center justify-between">
-        <button on:click={cadastraImovel}  class="bg-blue-300 hover:bg-blue-600 text-white font-bold hover:text-black py-2 px-4 rounded-md" type="button">
+        <button on:click={CadastraImovel}  class="bg-blue-300 hover:bg-blue-600 text-white font-bold hover:text-black py-2 px-4 rounded-md" type="button">
           Cadastrar Imóvel
         </button>
       </div>

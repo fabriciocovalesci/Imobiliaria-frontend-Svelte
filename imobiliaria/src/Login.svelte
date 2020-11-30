@@ -21,12 +21,6 @@
         },
         body: JSON.stringify({"username" : username, "password" : password})
       })
-      // .then((response) =>{
-      //   if(response.status != 200 || response.body == null){
-      //     console.log("ERROR: sem acesso ao sistema " + response.status );
-      //     alert("Usuarico com senha/user incorreto ou sem cadastro")
-      //   }
-      // })
       .then(response => response.json())
       .then(data => {
       $user = data.token
