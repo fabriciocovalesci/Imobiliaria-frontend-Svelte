@@ -1,6 +1,31 @@
 <script>
 
 import Nav from './Nav.svelte'
+
+
+// var content = 'Imobiliária Blockchain.';
+// var text = document.getElementById('#text');
+
+// var speed = 190;
+// var cont = 0;
+
+// function typeWriter () {
+//   if(cont < content.length){
+//     text.textContent += content.charAt(cont);
+//     cont++;
+//     setTimeout(typeWriter, speed);
+//   }else{
+//     text.textContent = '';
+//     cont = 0;
+//     typeWriter();
+//   }
+// }
+
+// typeWriter();
+
+
+
+
 </script>
 
 <Nav/>
@@ -15,5 +40,10 @@ import Nav from './Nav.svelte'
         <h3 class='text-2xl font-medium font-bold text-gray-700 font-thin text-justify block'>Vender</h3>
         <h3 class='text-2xl font-medium font-bold text-gray-700 font-thin text-justify block'>Alugar</h3> 
     </div>
+
+    <div class="absolute lg:w-auto lg:h-scream p-10 m-20 py-5 bg-white opacity-75 rounded-lg">
+        <p id='text' class='font-serif text-black font-bold'>Imobiliária Blockchain</p>
+    </div>
+
 </div>
 </main>
