@@ -2,7 +2,12 @@
 
 import Nav from './Nav.svelte'
 
+// var options = {
+//   strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+//   typeSpeed: 40
+// };
 
+// var typed = new Typed('#text', options);
 // var content = 'Imobiliária Blockchain.';
 // var text = document.getElementById('#text');
 
@@ -42,7 +47,7 @@ import Nav from './Nav.svelte'
     </div>
 
     <div class="absolute lg:w-auto lg:h-scream p-10 m-20 py-5 bg-white opacity-75 rounded-lg">
-        <p id='text' class='font-serif text-black font-bold'>Imobiliária Blockchain</p>
+        <p id='text' class='font-serif text-black font-bold'></p>
     </div>
 
 </div>

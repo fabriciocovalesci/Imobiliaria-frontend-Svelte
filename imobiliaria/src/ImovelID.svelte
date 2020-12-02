@@ -35,28 +35,46 @@
 </script>
 
 <Nav />
-<main class="top-10 m-10 p-10">
 
-    <div class="max-w-md mx-auto bg-white rounded-xl border border-black border-solid border-2 shadow-md overflow-hidden md:max-w-2xl">
+<div
+    class="min-h-screen flex items-center   justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-1">
+    <div
+        class="max-w-md w-full  border border-gray-600 border-solid p-2 rounded-md shadow-2xl">
         <div class="md:flex">
-          <div class="md:flex-shrink-0">
-            <img class="h-56 w-full object-cover md:w-48" src={$imoveilAlow.photo} alt="">
-          </div>
-          <div class="p-8">
-            <div class="uppercase text-center tracking-wide text-sm text-indigo-500 font-semibold">{$imoveilAlow.title}</div>
-            <p class="block mt-1 text-lg text-center leading-tight font-medium text-black">ETH {$imoveilAlow.amount}</p>
-            <p class="mt-2 text-center text-gray-800">{$imoveilAlow.description}</p>
-          </div>
+            <div class="md:flex-shrink-0">
+                <img
+                    class="h-56 w-full object-cover md:w-48 rounded-md"
+                    src={$imoveilAlow.photo}
+                    alt="" />
+            </div>
+            <div class="p-8">
+                <div
+                    class="uppercase text-center tracking-wide text-sm text-indigo-500 font-semibold">
+                    {$imoveilAlow.title}
+                </div>
+                <p
+                    class="block mt-1 text-lg text-center leading-tight font-medium text-black">
+                    ETH
+                    {$imoveilAlow.amount}
+                </p>
+                <p class="mt-2 text-center text-gray-800">
+                    {$imoveilAlow.description}
+                </p>
+            </div>
         </div>
-        <div class="flex items-center">
             <Router>
                 <div class=" p-5 m-5 bg-left">
-                    <a href="/compra" use:links Perfil><button
-                            class="bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md"
-                            type="button">Comprar</button></a>
+                <a
+                    href="/compra">
+                    <button
+                        type="submit"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <span
+                            class="absolute left-0 inset-y-0 flex items-center pl-3" />
+                        Comprar
+                    </button></a>
                 </div>
             </Router>
-        </div>
-      </div>   
-</main>
+    </div>
+</div>
 <Footer />
