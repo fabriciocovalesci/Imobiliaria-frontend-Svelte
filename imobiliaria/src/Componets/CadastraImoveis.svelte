@@ -47,7 +47,7 @@
         method: 'POST',
         headers: {
             'Accept': "application/json",
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data;",
             'Accept-Encoding': 'deflate, gzip;q=1.0, *;q=0.5'
             //'Authorization': 'Token ' + $user
         },

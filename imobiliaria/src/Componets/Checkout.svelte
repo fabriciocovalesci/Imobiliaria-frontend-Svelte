@@ -61,127 +61,128 @@
     });
 
     let abi = [
-        {
-            inputs: [
-                {
-                    internalType: "address",
-                    name: "recebendo",
-                    type: "address",
-                },
-                {
-                    internalType: "uint256",
-                    name: "valor",
-                    type: "uint256",
-                },
-            ],
-            name: "pagamentoImovel",
-            outputs: [],
-            stateMutability: "payable",
-            type: "function",
-        },
-        {
-            anonymous: false,
-            inputs: [
-                {
-                    indexed: false,
-                    internalType: "address",
-                    name: "pagador",
-                    type: "address",
-                },
-                {
-                    indexed: false,
-                    internalType: "uint256",
-                    name: "pgto",
-                    type: "uint256",
-                },
-            ],
-            name: "SaldoDevolvido",
-            type: "event",
-        },
-        {
-            anonymous: false,
-            inputs: [
-                {
-                    indexed: false,
-                    internalType: "address",
-                    name: "from",
-                    type: "address",
-                },
-                {
-                    indexed: false,
-                    internalType: "address",
-                    name: "to",
-                    type: "address",
-                },
-                {
-                    indexed: false,
-                    internalType: "uint256",
-                    name: "amount",
-                    type: "uint256",
-                },
-            ],
-            name: "Transfer",
-            type: "event",
-        },
-        {
-            inputs: [
-                {
-                    internalType: "address",
-                    name: "",
-                    type: "address",
-                },
-            ],
-            name: "balances",
-            outputs: [
-                {
-                    internalType: "uint256",
-                    name: "",
-                    type: "uint256",
-                },
-            ],
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            inputs: [],
-            name: "cliente",
-            outputs: [
-                {
-                    internalType: "address",
-                    name: "",
-                    type: "address",
-                },
-            ],
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            inputs: [],
-            name: "get",
-            outputs: [
-                {
-                    internalType: "uint256",
-                    name: "",
-                    type: "uint256",
-                },
-            ],
-            stateMutability: "view",
-            type: "function",
-        },
-        {
-            inputs: [],
-            name: "vendedor",
-            outputs: [
-                {
-                    internalType: "address",
-                    name: "",
-                    type: "address",
-                },
-            ],
-            stateMutability: "view",
-            type: "function",
-        },
-    ];
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recebendo",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "valor",
+				"type": "uint256"
+			}
+		],
+		"name": "pagamentoImovel",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "pagador",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "pgto",
+				"type": "uint256"
+			}
+		],
+		"name": "SaldoDevolvido",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "balances",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "cliente",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "get",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "vendedor",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+
 
     const contrato = new web3.eth.Contract(
         abi,
@@ -189,14 +190,14 @@
     );
 
     function pagarImovel() {
-        let valor = 5.0;
+        let valor = 6.0000000000;
 
         let account = "0x2FC2A6876f384378882700f3125621fDA6C88b2f";
 
         contrato.methods
             .pagamentoImovel(accounts[0], valor)
             .send(
-                { from: accounts[1], gas: 1500001, gasPrice: "30000000000" },
+                { from: accounts[1], gas: 2500001, gasPrice: "50000000000" },
                 function (error, transaction) {
                     if (error) {
                         console.log("Error " + error);
@@ -208,23 +209,11 @@
 
     let endereco = []
 
-    function trocaAddress(){
-        if(!endereco[0]){
-            return false;
-        }
-        let end = endereco[0]
-        $newAddress = endereco[0]
-        console.log('meu novo address ' + end);
-        console.log($newAddress[0]);
-        return $newAddress[0];
-    }
 
     function ConnectMetaMask() {
         if (window.ethereum !== "undefined") {
             window.ethereum.enable().then((data) => {
-                endereco.push(data)
-                console.log(endereco);
-                trocaAddress()
+                $newAddress = data;
                 alert("Sucesso na conexão com MetaMask\nSeu endereço " + data);
             });
             return true;
@@ -271,26 +260,21 @@
                     class="uppercase text-center tracking-wide text-lg text-indigo-800 font-semibold">
                     Cliente
                 </h2>
-                <CardClient DataClient={$newAddress[0] ? $newAddress[0] : $dataClient} />
+                <CardClient DataClient={$dataClient} Address={$newAddress} />
             </div>
         </div>
 
-        <div class="flex  justify-center">
-            <Router>
-                <a href="/checkout" use:links Checkout><button
-                        class="bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md"
-                        type="button">Finalizar compra</button></a>
-            </Router>
+        <div class="flex  justify-center m-1">
 
             <button
-                class="bg-blue-500 text-white p-2 rounded-md m-2"
+                class=" py-2 px-4 border m-2 border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 type="button"
                 on:click={pagarImovel}>
                 Finalizar Compra
             </button>
 
             <button
-                class="bg-blue-500 text-white p-2 rounded-md m-2"
+                class=" py-2 px-4 border m-2 border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 type="button"
                 on:click={ConnectMetaMask}>
                 Abrir MetaMask

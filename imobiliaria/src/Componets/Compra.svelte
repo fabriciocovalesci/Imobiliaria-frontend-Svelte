@@ -87,10 +87,10 @@
             </div>
         </div>
 
-        <div class='flex  justify-center'>
+        <div class='flex  justify-center m-1'>
             <Router>
                 <a href="/checkout" use:links Checkout><button
-                        class="bg-blue-600 text-lg text-white font-medium m-2 p-1 hover:bg-teal-300 hover:text-gray-700  border border-gray-900 inline-block rounded-md"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         type="button">Finalizar compra</button></a>
             </Router>
         </div>
