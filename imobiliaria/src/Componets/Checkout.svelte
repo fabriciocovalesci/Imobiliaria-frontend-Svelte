@@ -8,6 +8,7 @@
     import CardImovel from "./CardImovel.svelte";
     import CardClient from "./CardClient.svelte";
     import CardSale from "./CardSale.svelte";
+    import { IdImovel } from '../checkout.js'
 
     import {
         imoveis,
@@ -20,7 +21,7 @@
     } from "../imoveis.js";
     import { onMount } from "svelte";
 
-    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/"+$indice;
+    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/1"+$IdImovel;
 
     let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
 
@@ -65,12 +66,12 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "recebendo",
+				"name": "_recebendo",
 				"type": "address"
 			},
 			{
 				"internalType": "uint256",
-				"name": "valor",
+				"name": "_valor",
 				"type": "uint256"
 			}
 		],
@@ -157,7 +158,20 @@
 	},
 	{
 		"inputs": [],
-		"name": "get",
+		"name": "getAddressVendedor",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getAmountVendedor",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -174,8 +188,13 @@
 		"outputs": [
 			{
 				"internalType": "address",
-				"name": "",
+				"name": "vendedorAccount",
 				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -189,23 +208,54 @@
         "0x68Dbf24D9F642a2FDd0a899c3F2988ab97c0c1c1"
     );
 
-    function pagarImovel() {
-        let valor = 6.0000000000;
+    
 
+   
+    function getConta(_valor, _pagar){
+        return _valor - _pagar;
+    }
+
+
+    function pagarImovel() {
+        let valorImovel = 5000000000000000000;
         let account = "0x2FC2A6876f384378882700f3125621fDA6C88b2f";
+        let valorConta;
+
+        // web3.eth.getBalance(accounts[0], 
+        // function(error, result) {
+        //     getConta(result, valorImovel)
+        //     console.log(valorPagar);
+        // });
+
+        // console.log('-> ' + valorConta);
 
         contrato.methods
-            .pagamentoImovel(accounts[0], valor)
-            .send(
-                { from: accounts[1], gas: 2500001, gasPrice: "50000000000" },
+
+            .pagamentoImovel(accounts[0], valorImovel)
+            .send({
+                 to : accounts[2], 
+                 from: accounts[0], 
+                 value : valorImovel,
+                  gas: 1500001, gasPrice: "30000000000" },
                 function (error, transaction) {
                     if (error) {
                         console.log("Error " + error);
                     }
+                    console.log(transaction);
+                    web3.eth.getBalance(accounts[2], function(error, result) {
+                        console.log('2 - ' + result);
+                    });
+
+                    web3.eth.getBalance(accounts[0], function(error, result) {
+                        console.log('0 - '  + result );
+                    });
                     return transaction;
                 }
-            );
+            )
     }
+
+
+    
 
     let endereco = []
 

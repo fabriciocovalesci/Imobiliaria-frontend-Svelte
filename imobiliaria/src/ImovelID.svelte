@@ -3,6 +3,7 @@
     import Compra from "./Componets/Compra.svelte";
     import { Router, Link, Route, links } from "svelte-routing";
     import { imoveis, indice, imoveilAlow } from "./imoveis.js";
+    import { IdImovel } from './checkout.js'
     import Cards from "./Cards.svelte";
     import { onMount } from "svelte";
     import Footer from "./Componets/Footer.svelte";
@@ -17,13 +18,12 @@
         //navigate(`/imovelID/${imovelData.id}`, { replace: true })
     };
 
-    let Resp = [];
-
+    $IdImovel = $indice
+    
     onMount(async () => {
         let res = await fetch(URLIM);
         res = await res.json();
         $imoveilAlow = res;
-        Resp = res;
         // console.log($imoveilAlow);
     });
 
