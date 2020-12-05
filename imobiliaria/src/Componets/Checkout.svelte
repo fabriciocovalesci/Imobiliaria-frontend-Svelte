@@ -8,7 +8,8 @@
     import CardImovel from "./CardImovel.svelte";
     import CardClient from "./CardClient.svelte";
     import CardSale from "./CardSale.svelte";
-    import { IdImovel } from '../checkout.js'
+    import { dataImovel, IdImovel } from '../checkout'
+  
 
     import {
         imoveis,
@@ -19,9 +20,11 @@
         newAddress,
         dataSale,
     } from "../imoveis.js";
+
     import { onMount } from "svelte";
 
-    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/1"+$IdImovel;
+    
+    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/" + $indice
 
     let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
 
@@ -31,12 +34,23 @@
 
     const web3 = new Web3("HTTP://127.0.0.1:7545");
 
+    
+    const dadosImovelFor = {
+        title : '',
+        description: '',
+        amount : ''
+    }
+    
+    let dataDoImovel = []
+    
     onMount(async () => {
-        let res = await fetch(URLIM);
-        res = await res.json();
-        $dataIm = res;
-        // console.log($imoveilAlow);
+        let response = await fetch(URLIM);
+        const jsonI = await response.json();
+        $dataIm = jsonI;
+        //console.log(dataDoImovel.amount);
     });
+
+
 
 
     onMount(async () => {
@@ -202,19 +216,12 @@
 	}
 ]
 
-
+    // chama contrato por meio do web3
     const contrato = new web3.eth.Contract(
         abi,
-        "0x68Dbf24D9F642a2FDd0a899c3F2988ab97c0c1c1"
+        "0x4393Cc5076A2dd67E3242A9394bC25166C896ddd"
     );
-
-    
-
    
-    function getConta(_valor, _pagar){
-        return _valor - _pagar;
-    }
-
 
     function pagarImovel() {
         let valorImovel = 5000000000000000000;
@@ -228,10 +235,12 @@
         // });
 
         // console.log('-> ' + valorConta);
+     //   let send = web3.eth.sendTransaction({from:eth.coinbase,to:contract_address, value:web3.toWei(0.05, "ether")});
 
         contrato.methods
 
             .pagamentoImovel(accounts[0], valorImovel)
+            
             .send({
                  to : accounts[2], 
                  from: accounts[0], 
@@ -242,6 +251,7 @@
                         console.log("Error " + error);
                     }
                     console.log(transaction);
+
                     web3.eth.getBalance(accounts[2], function(error, result) {
                         console.log('2 - ' + result);
                     });
@@ -249,15 +259,13 @@
                     web3.eth.getBalance(accounts[0], function(error, result) {
                         console.log('0 - '  + result );
                     });
+
+
                     return transaction;
                 }
             )
     }
 
-
-    
-
-    let endereco = []
 
 
     function ConnectMetaMask() {
@@ -277,6 +285,11 @@
 
 <Nav />
 
+
+
+
+
+{dataDoImovel}
 <main class="top-10 m-10 p-10">
     <div class="boder border-indigo-900 border-2 ">
         <div class="grid grid-flow-col">
@@ -291,7 +304,7 @@
                     class="uppercase text-center tracking-wide text-lg text-indigo-800 font-semibold">
                     Imóvel
                 </h2>
-                <CardImovel data={$dataIm} />
+                <CardImovel dataImovelCard={$dataIm} />
                 {$indice}
             </div>
 

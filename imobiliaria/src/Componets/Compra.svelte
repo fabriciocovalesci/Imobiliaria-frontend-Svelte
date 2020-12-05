@@ -7,7 +7,7 @@
 
     import Nav from "../Nav.svelte";
     import { Router, Link, Route, links } from "svelte-routing";
-    import { IdImovel } from '../checkout.js'
+    import { IdImovel } from '../checkout'
     import {
         imoveis,
         indice,
@@ -18,7 +18,8 @@
     } from "../imoveis.js";
     import { onMount } from "svelte";
 
-    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/"+$IdImovel;
+
+    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/"+ $indice
 
     let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
 
@@ -48,8 +49,6 @@
     });
 </script>
 
-
-{$indice}
 <Nav />
 <main class="top-10 m-10 p-10">
     <div class="boder border-indigo-600 border-2 ">
@@ -67,7 +66,7 @@
                     class="uppercase text-center tracking-wide text-lg text-indigo-800 font-semibold">
                     Imóvel
                 </h2>
-                <CardImovel data={$dataIm} />
+                <CardImovel dataImovelCard={$dataIm} />
                 {$indice}
             </div>
 

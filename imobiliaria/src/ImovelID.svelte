@@ -18,8 +18,7 @@
         //navigate(`/imovelID/${imovelData.id}`, { replace: true })
     };
 
-    $IdImovel = $indice
-    
+       
     onMount(async () => {
         let res = await fetch(URLIM);
         res = await res.json();
