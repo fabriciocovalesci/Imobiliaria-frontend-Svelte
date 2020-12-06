@@ -51,8 +51,6 @@
     });
 
 
-
-
     onMount(async () => {
         let response = await fetch(URLSALEMAN);
         response = await response.json();

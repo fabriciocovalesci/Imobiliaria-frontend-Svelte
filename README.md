@@ -20,10 +20,17 @@
 
 :heavy_check_mark: Registrar / Login  <br>
 :heavy_exclamation_mark: Perfil usuário  <br>
-:heavy_exclamation_mark: Registar imóvel para venda  <br>
+:heavy_exclamation_mark: Registar imóvel para venda ou aluguel  <br>
 :heavy_check_mark: Exibir todos imóveis  <br>
 :heavy_check_mark: Conectar com Meta Mask  <br>
-:heavy_check_mark: Checkout com smart contract e Ganache no blockchain  <br>
+:heavy_check_mark: Checkout da venda, com smart contract e Ganache no blockchain  <br>
+:heavy_exclamation_mark: Checkout para aluguel, com smart contract e Ganache no blockchain  <br>
+
+
+
+
+
+
 
 
 ## Como rodar este projeto  :dart:
