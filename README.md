@@ -53,3 +53,4 @@ https://loving-kowalevski-a42c85.netlify.app
 ## Arquitetura do Projeto
 
 
+![Arquitetura](https://user-images.githubusercontent.com/40548641/101282526-829e8580-37b4-11eb-8535-00bd85214344.png)
