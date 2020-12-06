@@ -48,3 +48,8 @@
 
 
 https://loving-kowalevski-a42c85.netlify.app
+
+
+## Arquitetura do Projeto
+
+
