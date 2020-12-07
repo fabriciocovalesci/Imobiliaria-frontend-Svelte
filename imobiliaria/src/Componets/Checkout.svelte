@@ -285,8 +285,6 @@
 
 
 
-
-
 {dataDoImovel}
 <main class="top-10 m-10 p-10">
     <div class="boder border-indigo-900 border-2 ">

@@ -14,6 +14,7 @@
 	import FinalSale from './Componets/FinalSale.svelte'
 	import Checkout from './Componets/Checkout.svelte'
 	import CadastraImoveis from './Componets/CadastraImoveis.svelte'
+	import Alugar from './Componets/Alugar.svelte'
 
 	export let url = "";
 </script>
@@ -37,6 +38,7 @@
 	  <Route path="final" component="{FinalSale}" />
 	  <Route path="checkout" component="{Checkout}" />
 	  <Route path="cadastraimoveis" component="{CadastraImoveis}" />
+	  <Route path="alugar" component="{Alugar}" />
 	  <Route path="/"><Home /></Route>
 	</div>
   </Router>
