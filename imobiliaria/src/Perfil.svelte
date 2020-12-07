@@ -10,8 +10,7 @@
     import Footer from './Componets/Footer.svelte'
 
 
-    let URL = 'https://apimobiliaria.herokuapp.com/api/v1/profile/'
-    let URLOCAL = 'http://127.0.0.1:8000/api/v1/register/'
+    let URLPROFILE = 'http://localhost:8000/api/v1/profile/3/'
     let CEP = 'https://cep.awesomeapi.com.br/json/'
     let CORS = 'https://cors-anywhere.herokuapp.com/'
 
@@ -86,15 +85,20 @@
 // lng: "-52.2850491"
 // state: "RS"
 
-
+const proxy = 'http://localhost:8000/'
    function perfil(){
-    //   fetch(`${CORS}${URLO}`,{
-        fetch(`${URLOCAL}`,{
+        fetch(`${URLPROFILE}`,{
         method: 'PUT',
         headers: {
-            'Accept': "application/json",
-            "Content-Type": "application/json",
-            'Authorization': 'Token ' + $user
+            'Accept': 'text/html; q=1.0, */*',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'pt-BR,pt;q=0.9',
+            'Connection': 'keep-alive',
+            'Content-Type':'multipart/form-data; application/javascript',
+            'Content-Disposition': 'form-data; application/javascript',
+            'Authorization': 'Token ' + $user,
+            'X-CSRFTOKEN': 'VqyAClhRlLLnrwKkS9KMQHUfzBWb69lH6EkxxX2TX5e15twST7EyLIFjILnsNK7i',
+            'Access-Control-Allow-Origin' : "*"
         },
         body: JSON.stringify(queryString)
       })
