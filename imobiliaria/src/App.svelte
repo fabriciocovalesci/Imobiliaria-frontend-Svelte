@@ -5,7 +5,6 @@
 	import Login from './Login.svelte'
 	import Register from './Register.svelte'
 	import Home from './Home.svelte'
-	import TestandoTail from './TestandoTail.svelte'
 	import Imoveis from './Imoveis.svelte'
 	import ImovelID from './ImovelID.svelte'
 	import Perfil from './Perfil.svelte'
@@ -21,16 +20,10 @@
 
   
   <Router url="{url}">
-	<!-- <nav>
-	  <Link to="/">Home</Link>
-	  <Link to="/tail">Tailwind</Link>
-	  <Link to="login">Login</Link>
-	</nav> -->
 	<div>
 	  <Route path="login" component="{Login}" />
 	  <Route path="register" component="{Register}" />
 	  <Route path="imoveis" component="{Imoveis}" />
-	  <Route path="tail" component="{TestandoTail}" />
 	  <Route path="imovelID/:id" component="{ImovelID}" />
 	  <Route path="perfil" component="{Perfil}" />
 	  <Route path="perfil" component="{Cards}" />

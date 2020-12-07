@@ -24,7 +24,7 @@
 
     let URLIM = "http://127.0.0.1:8000/api/v1/immobile/1"
 
-    let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
+    let URLLEASE = "http://localhost:8000/api/v1/lease/";
 
     let URLCLIENT = "http://localhost:8000/api/v1/profile/1";
 

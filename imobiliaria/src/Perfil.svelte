@@ -2,7 +2,6 @@
 <script>
     import { Router, Link, links } from "svelte-routing";
     import { navigate } from "svelte-routing";
-    import TestandoTail from './TestandoTail.svelte'
     import Nav from './Nav.svelte'
     import Imoveis from './Imoveis.svelte'
     import Login from './Login.svelte'

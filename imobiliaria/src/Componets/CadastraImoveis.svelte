@@ -144,7 +144,6 @@
 
   <Nav/>
 
-  <AlertaError/>
 <body class="bg-gray-400">
   <hr class="mb-6 border-t mt-3" />
   <div class="container mx-auto">

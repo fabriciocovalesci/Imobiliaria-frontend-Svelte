@@ -24,7 +24,7 @@
     import { onMount } from "svelte";
 
     
-    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/" + $indice
+    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/1"
 
     let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
 
@@ -68,10 +68,10 @@
 
     let accounts;
 
-    web3.eth.getAccounts().then((act) => {
+    web3.eth.getAccounts().then((act) => {       
         accounts = act;
         console.log(accounts);
-    });
+    })
 
     let abi = [
 	{
@@ -214,6 +214,10 @@
 	}
 ]
 
+    let valorcasa = $dataSale.amount;
+
+    console.log('valor ' + $dataSale.amount);
+
     // chama contrato por meio do web3
     const contrato = new web3.eth.Contract(
         abi,
@@ -226,21 +230,13 @@
         let account = "0x2FC2A6876f384378882700f3125621fDA6C88b2f";
         let valorConta;
 
-        // web3.eth.getBalance(accounts[0], 
-        // function(error, result) {
-        //     getConta(result, valorImovel)
-        //     console.log(valorPagar);
-        // });
-
-        // console.log('-> ' + valorConta);
-     //   let send = web3.eth.sendTransaction({from:eth.coinbase,to:contract_address, value:web3.toWei(0.05, "ether")});
+        if(!accounts){
+            alert("Sem conexão com blockchain")
+        }
 
         contrato.methods
-
-            .pagamentoImovel(accounts[0], valorImovel)
-            
+            .pagamentoImovel(accounts[2], valorImovel)
             .send({
-                 to : accounts[2], 
                  from: accounts[0], 
                  value : valorImovel,
                   gas: 1500001, gasPrice: "30000000000" },
@@ -249,6 +245,7 @@
                         console.log("Error " + error);
                     }
                     console.log(transaction);
+                    alert('Transação efetuada com sucesso !!\nHash da transação ' + transaction)
 
                     web3.eth.getBalance(accounts[2], function(error, result) {
                         console.log('2 - ' + result);
@@ -257,8 +254,6 @@
                     web3.eth.getBalance(accounts[0], function(error, result) {
                         console.log('0 - '  + result );
                     });
-
-
                     return transaction;
                 }
             )
@@ -282,10 +277,6 @@
 </script>
 
 <Nav />
-
-
-
-{dataDoImovel}
 <main class="top-10 m-10 p-10">
     <div class="boder border-indigo-900 border-2 ">
         <div class="grid grid-flow-col">

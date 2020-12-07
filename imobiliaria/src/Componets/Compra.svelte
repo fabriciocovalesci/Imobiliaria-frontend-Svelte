@@ -19,7 +19,7 @@
     import { onMount } from "svelte";
 
 
-    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/"+ $indice
+    let URLIM = "http://127.0.0.1:8000/api/v1/immobile/1"
 
     let URLSALE = "http://localhost:8000/api/v1/saleBuy/";
 
