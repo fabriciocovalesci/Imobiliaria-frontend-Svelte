@@ -29,10 +29,6 @@
 
 
 
-
-
-
-
 ## Como rodar este projeto  :dart:
 
 
@@ -47,8 +43,13 @@
 
 
 
-https://loving-kowalevski-a42c85.netlify.app
+Este projeto é um front end de uma *Imobiliária* que permite cada usuário um criar uma conta, efetuar login, cadastrar um imóvel,  comprar, vender e alugar.
 
+Para o desenvolvimento foi utilizado o framework **Svelte.js** e para CSS, foi utilizado o framework **Tailwind**.
+
+Este projeto conta também com um [Back end](https://github.com/fabriciocovalesci/API_Imobiliaria). Todas as requisição GET, POST, PUT, consomem os dados desta API desenvolvido em python.
+
+No fim a transação do imóvel é gravada num blockchain de desenvolvimento, também foi desenvolvido um *smart contract* na linguagem Solidity, o este projeto pode ser acessado neste [link](https://github.com/fabriciocovalesci/Smart_Contract_Imobiliaria).
 
 ## Arquitetura do Projeto
 
